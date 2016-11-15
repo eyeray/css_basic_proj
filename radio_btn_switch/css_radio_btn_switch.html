@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>라디오 버튼 이미지로 변경 </title>
+    <style>
+        /*라디오 버튼을 이미지로 대체해보자*/
+        input[type=radio]{
+            width:324px;
+            height:264px;
+            /*라디오 버튼을 사라지게 하는 css 코드 but IE에서 적용되지 않는다.*/
+            appearance: none;
+            -ms-appearance: none; /* Safari and Chrome */
+	        -moz-appearance: none; /* Firefox */
+	        -webkit-appearance: none; /* Safari and Chrome */
+        }
+    </style>
 </head>
 <body>
     <form action="POST">
