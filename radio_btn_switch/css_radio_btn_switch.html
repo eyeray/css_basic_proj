@@ -6,24 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>라디오 버튼 이미지로 변경 </title>
     <style>
-        /*라디오 버튼을 이미지로 대체해보자*/
+        /*IE에서는 appearance: none;가 적용되지 않으므로 label을 이용한다.*/
         input[type=radio]{
-            width:324px;
-            height:264px;
-            /*라디오 버튼을 사라지게 하는 css 코드 but IE에서 적용되지 않는다.*/
-            appearance: none;
-            -ms-appearance: none; /* Safari and Chrome */
-	        -moz-appearance: none; /* Firefox */
-	        -webkit-appearance: none; /* Safari and Chrome */
+            display:none;
         }
+        #radio_off+label{
+            display:inline-block;
+            background:url(images/off_off.jpg) 0 0 no-repeat;
+            width:324px;
+            height:224px;
+            text-indent:-9999px;
+            transition: all 0.2s linear;
+        }
+        #radio_on+label{
+            display:inline-block;
+            background:url(images/on_off.jpg) 0 0 no-repeat;
+            width:324px;
+            height:224px;
+            text-indent:-9999px;
+            transition:all 0.2 linear;
+        }
+
+
     </style>
 </head>
 <body>
+    <!-- inline-block의 에러 세로 2px 화이트스페이스가 생긴다. 해결하기 위해서는 주석처리를 해주자 -->
     <form action="POST">
-        <input type="radio" id="radio_off" name="switch" value="off">
-        <label for="radio_off">off</label>
-        <input type="radio" id="radio_on" name="switch" value="on">
-        <label for="radio_on">on</label>
+        <input type="radio" id="radio_off" class="common" name="switch" value="off">
+        <label for="radio_off">off</label><!--
+        --><input type="radio" id="radio_on" class="common" name="switch" value="on"><!--
+        --><label for="radio_on">on</label>
     </form>
 </body>
 </html>
