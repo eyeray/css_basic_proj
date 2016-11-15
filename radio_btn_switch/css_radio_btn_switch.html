@@ -16,6 +16,7 @@
             width:324px;
             height:224px;
             text-indent:-9999px;
+            cursor: pointer;
             transition: all 0.2s linear;
         }
         #radio_on+label{
@@ -24,16 +25,23 @@
             width:324px;
             height:224px;
             text-indent:-9999px;
+            cursor:pointer;
             transition:all 0.2 linear;
         }
-
+        /*css로 인접한 태그에 대해 에니메이션 효과를 줄 수 있다.*/
+        #radio_off:checked+label{
+            background: url(images/off_on.jpg) 0 0 no-repeat;
+        }
+        #radio_on:checked+label{
+            background: url(images/on_on.jpg) 0 0 no-repeat;
+        }
 
     </style>
 </head>
 <body>
     <!-- inline-block의 에러 세로 2px 화이트스페이스가 생긴다. 해결하기 위해서는 주석처리를 해주자 -->
     <form action="POST">
-        <input type="radio" id="radio_off" class="common" name="switch" value="off">
+        <input type="radio" id="radio_off" class="common" name="switch" value="off" checked="checked">
         <label for="radio_off">off</label><!--
         --><input type="radio" id="radio_on" class="common" name="switch" value="on"><!--
         --><label for="radio_on">on</label>
